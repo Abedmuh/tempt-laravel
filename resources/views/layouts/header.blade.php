@@ -15,8 +15,16 @@
     </form>
 
     <div class="text-end">
-      <button type="button" class="btn btn-outline-light me-2">Login</button>
-      <button type="button" class="btn btn-warning">Sign-up</button>
+      {{-- i thinker ill repair this one for dropdown profile --}}
+      @auth
+      <form action="/login">
+        <button type="submit" class="btn btn-warning">Log out</button>
+      </form>
+      @else
+      <form action="/login">
+        <button type="submit" class="btn btn-outline-light me-2">Login</button>
+      </form>
+      @endauth
     </div>
   </div>
 </nav>
