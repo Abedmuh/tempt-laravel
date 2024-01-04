@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
   public function index(){
-    return view('login.register',[
+    return view('login.pages-register',[
       'title'=>'Register'
     ]);
   }
