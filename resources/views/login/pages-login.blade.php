@@ -22,8 +22,8 @@
   </div>
 
   <div class="col-12">
-    <label for="yourPassword" class="form-label">Password</label>
-    <input type="password" name="password" class="form-control" id="yourPassword" required>
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password" required>
   </div>
 
   <div class="col-12">

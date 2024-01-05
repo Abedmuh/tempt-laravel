@@ -80,7 +80,7 @@
     </li><!-- End Profile Nav -->
     @else
     <form action="/login">
-      <button type="submit" class="btn btn-outline-light me-2">Login</button>
+      <button type="submit" class="btn btn-primary me-2">Login</button>
     </form>
     @endauth
   </ul>

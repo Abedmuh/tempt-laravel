@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Loker;
 use App\Http\Requests\StoreLokerRequest;
 use App\Http\Requests\UpdateLokerRequest;
+use Illuminate\Http\Request;
 
 class LokerController extends Controller
 {
@@ -13,7 +14,7 @@ class LokerController extends Controller
      */
     public function index()
     {
-        return view('loker.index');
+        return view('loker.dashboard');
     }
 
     /**
@@ -21,13 +22,13 @@ class LokerController extends Controller
      */
     public function create()
     {
-        //
+        return view('loker.post-loker');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLokerRequest $request)
+    public function store(Request $request)
     {
         $validateData = $request->validate([
           'posisi' => 'required',
@@ -35,12 +36,12 @@ class LokerController extends Controller
           'company' => 'required',
           'description' => 'required',
           'apply_via' => 'required',
-          'link' => 'required',
-          'expire' => 'required'
+          'link' => 'required'
         ]);
 
         // Loker::create($validateData);
-        return redirect('/')->with('success','New loker has been added!');
+        return $validateData;
+        // return redirect('/')->with('success','New loker has been added!');
     }
 
     /**
@@ -73,10 +74,5 @@ class LokerController extends Controller
     public function destroy(Loker $loker)
     {
         //
-    }
-
-    public function addLoker()
-    {
-      return view('loker.post-company');
     }
 }

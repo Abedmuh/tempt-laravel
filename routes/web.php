@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
@@ -28,5 +29,6 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/loker/post', [LokerController::class, 'addLoker'])->middleware('auth');
 Route::resource('loker', LokerController::class)->middleware('auth');
+
+Route::resource('company', CompanyController::class)->middleware('auth');

@@ -46,8 +46,7 @@
 
   <div class="col-12">
     <label for="password" class="form-label">Password</label>
-    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password"
-      required>
+    <input type="password" name="password" class="form-control" id="password" required>
     @error('password')
     <div class="invalid-feedback">
       {{ $message }}

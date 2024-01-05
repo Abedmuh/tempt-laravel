@@ -9,14 +9,14 @@
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="/loker">
-      <i class="bi bi-grid"></i>
+      <i class="bi bxs-shopping-bags"></i>
       <span>My Loker</span>
     </a>
   </li><!-- End Dashboard Nav -->
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="/loker/post">
-      <i class="bi bi-grid"></i>
+      <i class="bx file-earmark-post-fill"></i>
       <span>Loker Post</span>
     </a>
   </li><!-- End Dashboard Nav -->
@@ -26,7 +26,7 @@
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="pages-register.html">
-      <i class="bi bi-card-list"></i>
+      <i class="bi newspaper"></i>
       <span>News</span>
     </a>
   </li><!-- End Register Page Nav -->
