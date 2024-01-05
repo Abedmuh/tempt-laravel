@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Loker;
-use App\Http\Requests\StoreLokerRequest;
-use App\Http\Requests\UpdateLokerRequest;
+use App\Models\Lokerku;
+use App\Http\Requests\StoreLokerkuRequest;
+use App\Http\Requests\UpdateLokerkuRequest;
 
-class LokerController extends Controller
+class LokerkuController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('loker.index');
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class LokerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLokerRequest $request)
+    public function store(StoreLokerkuRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class LokerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Loker $loker)
+    public function show(Lokerku $lokerku)
     {
         //
     }
@@ -43,7 +43,7 @@ class LokerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Loker $loker)
+    public function edit(Lokerku $lokerku)
     {
         //
     }
@@ -51,7 +51,7 @@ class LokerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLokerRequest $request, Loker $loker)
+    public function update(UpdateLokerkuRequest $request, Lokerku $lokerku)
     {
         //
     }
@@ -59,13 +59,8 @@ class LokerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Loker $loker)
+    public function destroy(Lokerku $lokerku)
     {
         //
-    }
-
-    public function addLoker()
-    {
-      return view('loker.post-company');
     }
 }

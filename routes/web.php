@@ -21,11 +21,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/login', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/loker/post', [LokerController::class, 'addLoker'])->middleware('auth');
 Route::resource('loker', LokerController::class)->middleware('auth');

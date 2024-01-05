@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lokers', function (Blueprint $table) {
+        Schema::create('lokerkus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idCompany');
-            $table->string('posisi');
-            $table->string('link');
-            $table->string('apply_via');
-            $table->string('status');
-            $table->string('tag');
-            $table->string('location');
-            $table->timestamp('expire');
+            $table->foreignId('idUser');
+            $table->foreignId('idLoker');
             $table->timestamps();
         });
     }
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lokers');
+        Schema::dropIfExists('lokerkus');
     }
 };
