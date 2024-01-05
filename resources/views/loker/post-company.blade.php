@@ -8,6 +8,7 @@
 
       <!-- Vertical Form -->
       <form class="row g-3">
+        @csrf
         <div class="col-12">
           <label for="posisi" class="form-label">Posisi</label>
           <input type="text" class="form-control" id="posisi">
@@ -17,7 +18,7 @@
           <input type="text" class="form-control" id="location">
         </div>
         <div class="col-12">
-          <label for="location" class="form-label">Company</label>
+          <label for="company" class="form-label">Company</label>
           <select class="form-select" aria-label="Default select example">
             <option selected>Pilih Perusahaan</option>
             <option value="1">One</option>
@@ -26,7 +27,7 @@
           </select>
         </div>
         <div class="col-12">
-          <label for="description" class="form-label">Peskripsi</label>
+          <label for="description" class="form-label">Deskripsi</label>
           <input type="text" class="form-control" id="description">
         </div>
         <div class="col-12">

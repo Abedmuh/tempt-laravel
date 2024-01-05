@@ -29,7 +29,18 @@ class LokerController extends Controller
      */
     public function store(StoreLokerRequest $request)
     {
-        //
+        $validateData = $request->validate([
+          'posisi' => 'required',
+          'location' => 'required',
+          'company' => 'required',
+          'description' => 'required',
+          'apply_via' => 'required',
+          'link' => 'required',
+          'expire' => 'required'
+        ]);
+
+        // Loker::create($validateData);
+        return redirect('/')->with('success','New loker has been added!');
     }
 
     /**
