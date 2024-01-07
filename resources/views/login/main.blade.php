@@ -50,12 +50,7 @@
                 </a>
               </div><!-- End Logo -->
 
-              <div class="card mb-3">
-
-                <div class="card-body">
-                  @yield('container')
-                </div>
-              </div>
+              @yield('container')
 
               <div class="credits">
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loker;
 use App\Models\Company;
-use App\Http\Requests\UpdateCompanyRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateCompanyRequest;
 
 class CompanyController extends Controller
 {
@@ -38,8 +39,8 @@ class CompanyController extends Controller
         'link' => 'required'
       ]);
 
-      // Loker::create($validateData);
-      return $validateData;
+      Company::create($validateData);
+      return redirect('/loker')->with('success', 'Perusahaan berhasil ditambahkan');
     }
 
     /**

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('lokerkus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idUser');
-            $table->foreignId('idLoker');
+            $table->foreignId('user_id');
+            $table->foreignId('loker_id');
             $table->timestamps();
         });
     }

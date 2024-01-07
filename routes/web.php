@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\CompanyController;
+use App\Models\Loker;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokerController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -19,11 +20,13 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+      'lokers' => Loker::all(),
+    ]);
 });
 
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
+// Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');

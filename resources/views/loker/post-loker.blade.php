@@ -28,41 +28,44 @@
   <div class="d-flex justify-content-center row">
     <div class="card w-50">
       <div class="card-body">
-        <h5 class="card-title">Vertical Form</h5>
+        <h5 class="card-title">Tambah Loker</h5>
 
         <!-- Vertical Form -->
         <form class="row g-3" action="/loker" method="POST">
           @csrf
           <div class="col-12">
             <label for="posisi" class="form-label">Posisi</label>
-            <input type="text" class="form-control" id="posisi" required autofocus>
+            <input type="text" class="form-control" id="posisi" name="posisi" required autofocus>
           </div>
           <div class="col-12">
             <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" required>
+            <input type="text" class="form-control" id="location" name="location" required>
           </div>
           <div class="col-12">
-            <label for="location" class="form-label">Company</label>
-            <select class="form-select" required>
-              <option selected>Pilih Perusahaan</option>
-              <option value="1">One</option>
+            <label for="company_id" class="form-label">Company</label>
+            <select class="form-select" required name="company_id">
+              <option value="" disabled selected hidden>Pilih Perusahaan</option>
+              @foreach ($company as $item)
+              <option value="{{ $item->id }}" {{ (old('company_id')==$item->id ? 'selected' : '') }}>{{
+                $item->name }}</option>
+              @endforeach
             </select>
           </div>
-          <div class="col-12">
-            <label for="description" class="form-label">Deskripsi</label>
-            <input type="text" class="form-control" id="description" required>
-          </div>
-          <div class="col-12">
+          <div class=" col-12">
             <label for="apply_via" class="form-label">Apply via</label>
-            <input type="text" class="form-control" id="apply_via" required>
+            <input type="text" class="form-control" id="apply_via" name="apply_via" required>
           </div>
           <div class="col-12">
             <label for="link" class="form-label">link</label>
-            <input type="url" class="form-control" id="link" required>
+            <input type="url" class="form-control" id="link" name="link" required>
           </div>
           <div class="col-12">
-            <label for="date" class="form-label">expire</label>
-            <input type="date" class="form-control" id="date">
+            <label for="expire" class="form-label">expire</label>
+            <input type="date" class="form-control" id="expire" name="expire">
+          </div>
+          <div class="col-12">
+            <label for="description" class="form-label">Deskripsi</label>
+            <input type="text" class="form-control" style="height: 100px" id="description" name="description" required>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -72,7 +75,7 @@
 
       </div>
     </div>
-    <p class="text-center">Coba daftarkan perusahaanmu disini <span><a href="/company">disini</a><span></p>
+    <p class="text-center">Coba daftarkan perusahaanmu <span><a href="/company">disini</a><span></p>
   </div>
 </section>
 
