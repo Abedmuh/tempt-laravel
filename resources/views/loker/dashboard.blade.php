@@ -40,15 +40,16 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($lokers as $loker)
             <tr>
-              <th scope="row"><a href="#">#2457</a></th>
-              <td>Brandon Jacob</td>
-              <td><a href="#" class="text-primary">At praesentium minu</a></td>
-              <td>$64</td>
-              <td><span class="badge bg-success">Approved</span></td>
-              <td>Approved</span></td>
+              <td>{{ $loker->id }}</td>
+              <td>{{ $loker->posisi }}</td>
+              <td>{{ $loker->company->name }}</td>
+              <td>{{ $loker->apply_via }}</td>
+              <td>status</td>
+              <td>action</td>
             </tr>
-
+            @endforeach
           </tbody>
         </table>
 

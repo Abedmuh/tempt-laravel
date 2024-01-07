@@ -13,21 +13,21 @@ class LoginController extends Controller
         'title' =>'login'
     ]);
   }
-  public function authenticate(Request $request)
-  {
-    $credential = request()->validate([
-      'email' => 'required|email:dns',
-      'password' => 'required'
-    ]);
+  // public function authenticate(Request $request)
+  // {
+  //   $credential = request()->validate([
+  //     'email' => 'required|email:dns',
+  //     'password' => 'required'
+  //   ]);
 
-    if (Auth::attempt($credential)) {
-      $request->session()->regenerate();
+  //   if (Auth::attempt($credential)) {
+  //     $request->session()->regenerate();
 
-        return redirect()->intended('/');
-    }
+  //       return redirect()->intended('/');
+  //   }
 
-    return back()->with('loginError', 'login failed');
-  }
+  //   return back()->with('loginError', 'login failed');
+  // }
 
   public function logout(Request $request)
   {

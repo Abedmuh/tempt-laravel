@@ -25,13 +25,30 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
+// Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 // Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+// Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
+// Route::get('/register', [RegisterController::class, 'index']);
+// Route::post('/register', [RegisterController::class, 'store']);
 
-Route::resource('loker', LokerController::class)->middleware('auth');
+// Route::resource('loker', LokerController::class)->middleware('auth');
 
-Route::resource('company', CompanyController::class)->middleware('auth');
+// Route::resource('company', CompanyController::class)->middleware('auth');
+
+Route::get('/login', [LoginController::class, 'index'])
+    ->middleware(['guest'])
+    ->name('login');
+Route::post('/login', [LoginController::class, 'aunthenticate'])
+    ->middleware(['guest']);
+
+Route::get('/register', [RegisterController::class, 'index'])
+    ->middleware(['guest'])
+    ->name('register');
+Route::post('/register', [RegisterController::class, 'store'])
+    ->middleware(['guest']);
+    
+Route::resource('loker', LokerController::class)
+    ->middleware('auth');
+Route::resource('company', CompanyController::class)
+    ->middleware('auth');

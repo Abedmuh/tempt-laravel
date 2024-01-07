@@ -16,4 +16,8 @@ class Loker extends Model
     public function company() {
       return $this->belongsTo(Company::class);
     }
+
+    protected $guarded = [
+      'id',
+    ];
 }
