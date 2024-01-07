@@ -70,10 +70,14 @@
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="/login">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Sign Out</span>
-          </a>
+          <form action="/logout" method="POST">
+            @csrf
+            <button class="dropdown-item d-flex align-items-center">
+              <i class="bi bi-box-arrow-right"></i><span>Sign
+                Out</span>
+            </button>
+          </form>
+
         </li>
 
       </ul><!-- End Profile Dropdown Items -->
