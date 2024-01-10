@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('lokers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->foreignId('company_id');
             $table->string('posisi');
             $table->string('location');
             $table->string('link');
-            $table->string('apply_via');
+            $table->char('apply_via')->nullable();
+            $table->char('tag')->nullable();
             $table->dateTime('expire');
             $table->string('description');
             $table->timestamps();

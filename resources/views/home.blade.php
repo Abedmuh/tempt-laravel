@@ -12,8 +12,8 @@
   </nav>
 </div>
 <!-- End Page Title -->
-
-<section class="section">
+<p>lmao</p>
+{{-- <section class="section">
   <div class="col-12">
     <div class="card recent-sales overflow-auto">
 
@@ -48,7 +48,7 @@
     </div>
   </div>
 </section>
-<!-- Recent Sales -->
+<!-- Recent Sales --> --}}
 
 <!-- End Recent Sales -->
 @endsection

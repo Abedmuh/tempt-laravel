@@ -17,13 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-      'name',
-      'username',
-      'email',
-      'password',
-    ];
-
+    // protected $fillable = [
+    //   'name',
+    //   'username',
+    //   'email',
+    //   'password',
+    // ];
+    protected $guarded = ['id'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,8 +44,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function lokerKu()
+    public function loker()
     {
-      return $this->hasMany(Lokerku::class);
+      return $this->hasMany(Loker::class);
+    }
+
+    public function posts() {
+      return $this->hasMany(Post::class);
     }
 }

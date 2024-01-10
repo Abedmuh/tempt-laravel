@@ -19,8 +19,6 @@
   </div>
 </div>
 
-
-
 <section class="section">
   <div class="col-12">
     <div class="card recent-sales overflow-auto">

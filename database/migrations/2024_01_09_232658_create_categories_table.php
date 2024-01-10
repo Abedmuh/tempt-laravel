@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lokerkus', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('loker_id');
-            $table->timestamps();
+        Schema::create('categories', function (Blueprint $table) {
+          $table->id();
+          $table->string('name')->unique();
+          $table->string('slug')->unique();
+          $table->timestamps();
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lokerkus');
+        Schema::dropIfExists('categories');
     }
 };

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lokerku;
-use App\Http\Requests\StoreLokerkuRequest;
-use App\Http\Requests\UpdateLokerkuRequest;
+use App\Models\Category;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 
-class LokerkuController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class LokerkuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLokerkuRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class LokerkuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Lokerku $lokerku)
+    public function show(Category $category)
     {
         //
     }
@@ -43,7 +43,7 @@ class LokerkuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Lokerku $lokerku)
+    public function edit(Category $category)
     {
         //
     }
@@ -51,7 +51,7 @@ class LokerkuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLokerkuRequest $request, Lokerku $lokerku)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
     }
@@ -59,7 +59,7 @@ class LokerkuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Lokerku $lokerku)
+    public function destroy(Category $category)
     {
         //
     }
