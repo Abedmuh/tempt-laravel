@@ -37,13 +37,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-          'name' => 'mamang',
-          'username' => 'mamang.uwu',
-          'email' => 'mamang@gmail.com',
+          'name' => 'Nullifier',
+          'username' => 'abdillah',
+          'email' => 'abdillahh1453@gmail.com',
           'password' => bcrypt('password')
         ]); 
         
-        User::factory(5)->create();
-        Post::factory(20)->create();
+        // User::factory(5)->create();
+        // Post::factory(20)->create();
     }
 }

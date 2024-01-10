@@ -25,7 +25,7 @@
   <div class="card w-25">
     <div class="card-body">
       <h5 class="card-title">{{ $post->title }}</h5>
-      <p>{{ $post->body }}</p>
+      <p>{{ $post->excerpt }}</p>
     </div>
   </div><!-- End Default Card -->
   @endforeach
