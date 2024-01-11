@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdatePostRequest;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -70,15 +71,43 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+      return view('blog.edit',[
+        'post' => $post,
+        'category' => Category::all()
+      ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
-        //
+      $rules = [
+        'title' => 'required|max:255',
+        'category_id' => 'required',
+        // 'image' => 'required|file|max:255',
+        'body' => 'required'
+      ];   
+
+      if ($request->slug != $post->slug) {
+          $rules['slug'] = 'required|unique:posts';
+      }
+
+      $validateData = $request->validate($rules);
+
+      // if ($request->file('image')) {
+      //     if ($request->oldImage) {
+      //         Storage::delete($request->oldImage);
+      //     }
+      //     $validateData['image'] = $request->file('image')->store('post-images');
+      // }
+
+      $validateData['user_id'] = auth()->user()->id;
+      $validateData['excerpt'] = Str::limit(strip_tags($request->body), 100, '...');
+
+      Post::where('id',$post->id)->update($validateData);
+
+      return redirect('/post')->with('success','Post has been edited!');
     }
 
     /**
@@ -86,7 +115,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+      Post::destroy($post->id);
+      return redirect('/mypost')->with('success','New post has been Deleted!');
     }
 
     /**

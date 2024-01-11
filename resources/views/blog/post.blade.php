@@ -6,8 +6,12 @@
     <h1>{{ $post->title }}</h1>
     <div class="col">
       <a class="btn btn-success" href="/post" role="button">Kembali</a>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button type="button" class="btn btn-danger">Delete</button>
+      <a class="btn btn-warning" href="/post/{{ $post->id }}/edit" role="button">Edit</a>
+      <form action="/post/{{ $post->slug }}" method="POST" class="d-inline">
+        @method('delete')
+        @csrf
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
     </div>
     {{ $post->body }}
   </div>
