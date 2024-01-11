@@ -50,11 +50,11 @@ class PostController extends Controller
       }
 
       $validateData['user_id'] = auth()->user()->id;
-      $validateData['excerpt'] = Str::limit(strip_tags($request->body), 100, '...');
+      $validateData['excerpt'] = Str::limit(strip_tags($request->body), 300, '...');
 
     Post::create($validateData);
-    return response()->json($validateData);
-    // return redirect('/mypost')->with('success','New post has been added!');
+    // return response()->json($validateData);
+    return redirect('/mypost')->with('success','New post has been added!');
     }
 
     /**
@@ -103,5 +103,12 @@ class PostController extends Controller
     {
       $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
       return response()->json(['slug' => $slug]);
+    }
+
+    public function slug(Post $post) 
+    {
+      return view('blog.post', [
+        'post' => $post
+      ]);
     }
 }

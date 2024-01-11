@@ -51,6 +51,8 @@ Route::resource('company', CompanyController::class)
 
 Route::resource('post', PostController::class)
     ->middleware('auth');
+
+Route::get('/post/{post:slug}', [PostController::class, 'slug']);
 Route::get('/mypost',[PostController::class,'myposts']);
 
 Route::get('/blog/checkSlug',[PostController::class, 'checkSlug']);

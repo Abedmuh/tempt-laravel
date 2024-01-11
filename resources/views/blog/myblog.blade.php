@@ -27,12 +27,12 @@
 <div class="d-flex justify-content-center flex-wrap">
 
   @foreach ($posts as $post)
-
-  <div class="card w-25">
+  <div class="card w-25 m-2">
     <div class="card-body">
       <h5 class="card-title">{{ $post->title }}</h5>
-      <p>{{ $post->body }}</p>
+      <p>{{ $post->excerpt }}</p>
     </div>
+    <p class="text-end m-2"><a href="/post/{{ $post->slug }}">Read more...</a></p>
   </div><!-- End Default Card -->
   @endforeach
 
