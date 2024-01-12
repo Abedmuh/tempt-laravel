@@ -2,11 +2,12 @@
 
 use App\Models\Loker;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokerController;
 use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -56,3 +57,7 @@ Route::get('/post/{post:slug}', [PostController::class, 'slug']);
 Route::get('/mypost',[PostController::class,'myposts']);
 
 Route::get('/blog/checkSlug',[PostController::class, 'checkSlug']);
+
+Route::resource('/admin', AdminController::class)
+    ->except('show')
+    ->middleware('admin');
